@@ -41,7 +41,7 @@ client.on('message', message => {
         }
 
 
-        message.channel.send(`${mockingText} ${user && user.toString()}`)
+        message.channel.send(`${mockingText} ${user ? user.toString() : ''}`)
 
 		readMessage = false;
         timeout = setTimeout( () => readMessage = true, 5000);
