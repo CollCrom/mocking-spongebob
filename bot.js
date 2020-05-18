@@ -28,19 +28,17 @@ client.on('message', message => {
             args.shift();
         }
     
-        const letterArray = args.join(' ').toLowerCase().split('');
-        let i = 0;
+        const letterArray = args.join(' ').split('');
         let counter = 0;
-        let mockingText = '';
-        while(i < letterArray.length){
-            mockingText += counter % 2 ? letterArray[i].toUpperCase() : letterArray[i];
-            if(letterArray[i] !== " "){
+        const mockingText = letterArray.reduce((string, letter) => {
+            string += counter % 2 ? letter.toUpperCase() : letter.toLowerCase();
+            if(!letter.search(/[a-zA-z]/)){
                 counter++;
             }
-            i++
-        }
+            return string;
+        }, '')
 
-
+        message.delete()
         message.channel.send(`${mockingText} ${user ? user.toString() : ''}`)
 
 		readMessage = false;
