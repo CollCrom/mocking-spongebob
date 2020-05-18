@@ -33,8 +33,8 @@ client.on('message', message => {
         let counter = 0;
         let mockingText = '';
         while(i < letterArray.length){
-            if(letterArray[i] !== ''){
-                mockingText += counter % 2 ? letterArray[i].toUpperCase() : letterArray[i];
+            mockingText += counter % 2 ? letterArray[i].toUpperCase() : letterArray[i];
+            if(letterArray[i] !== " "){
                 counter++;
             }
             i++
