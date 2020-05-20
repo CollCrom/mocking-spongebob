@@ -39,7 +39,7 @@ client.on('message', message => {
         }, '')
 
         message.delete()
-        message.channel.send(`${mockingText} ${user ? user.toString() : ''}`)
+        message.channel.send(`${mockingText} ${user ? user.toString() : ''}-- from ${message.author.toString()}`)
 
 		readMessage = false;
         timeout = setTimeout( () => readMessage = true, 5000);
