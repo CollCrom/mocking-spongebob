@@ -86,7 +86,7 @@ const mocking = (message) => {
     }, '')
 
     message.delete()
-    message.channel.send(`${mockingText} ${user ? user.toString() : ''}-- from ${message.author.toString()} hello`);
+    message.channel.send(`${mockingText} ${user ? user.toString() : ''}-- from ${message.author.toString()}`);
 }
 
 const addRole = ( message ) => {
